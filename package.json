@@ -1,0 +1,13 @@
+{
+  "name": "cy-standalone",
+  "scripts": {
+    "start": "npx ts-node src/index.ts",
+    "build": "parcel build src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "cypress": "^10.7.0",
+    "parcel": "^2.7.0",
+    "typescript": "^4.8.2"
+  }
+}
