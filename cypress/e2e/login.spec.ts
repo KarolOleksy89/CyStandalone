@@ -17,17 +17,18 @@ describe('Test suite name', () => {
         cy.get('[type="submit"]').click();
         cy.intercept('/api-proxy/customer/deposit-limits').as('depositLimits')
 
-        /*** ZADANIE DODATKOWE NR 1
+        // Zadanie dodatkowe 1
         cy.wait('@depositLimits', {timeout: 5000}).then(() => {
             cy.get('[class*="LinksContentWrapper"] a')
                 .should('have.length', 5)
             cy.get('[class*="LinksContentWrapper"] a').eq(3)
                 .should('have.text', 'casino')
         })
-         */
 
         cy.get('[href="/?account=summary"]')
             .should('be.visible');
+
+        // Zadanie dodatkowe 2
         cy.clearCookie('website.sid');
         cy.reload();
         cy.get('[data-test="account-navigation-login-link"]')
